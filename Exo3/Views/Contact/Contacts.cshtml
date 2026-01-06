@@ -1,0 +1,30 @@
+﻿@model List<Exo3.Models.ContactViewModel>
+
+<h2>Liste des contacts</h2>
+
+<div class="contacts-grid">
+    @foreach (var contact in Model)
+    {
+        <a asp-controller="Contact" asp-action="Contact" asp-route-id="@contact.Id" class="contact-card-link">
+            <div class="contact-card">
+                <div class="contact-card-header">
+                    <h3>@contact.Name</h3>
+                </div>
+                <div class="contact-card-body">
+                    <div class="contact-info">
+                        <strong>Email:</strong>
+                        <span>@contact.Email</span>
+                    </div>
+                    <div class="contact-info">
+                        <strong>ID:</strong>
+                        <span>@contact.Id</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    }
+</div>
+
+<div style="text-align: center; margin-top: 2rem;">
+    <a asp-controller="Contact" asp-action="Create" class="btn">+ Ajouter un nouveau contact</a>
+</div>

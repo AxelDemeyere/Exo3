@@ -1,0 +1,26 @@
+﻿@model Exo3.Models.ContactViewModel
+
+<h2>Créer un nouveau contact</h2>
+
+<form method="post" asp-action="Create" asp-controller="Contact">
+    <div class="input-container">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "input-field" , placeholder= "Entrez votre nom" })
+        <span class="error">
+            @Html.ValidationMessageFor(m => m.Name)
+
+        </span>    
+    </div>
+    
+    <div class="input-container">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "input-field", placeholder= "Entrez votre email" })
+        <span class="error">
+            @Html.ValidationMessageFor(m => m.Email)
+
+        </span>
+    </div>
+    
+    <button type="submit">Envoyer</button>
+    <button asp-controller="Contact" asp-action="Contacts">Annuler</button>
+</form>

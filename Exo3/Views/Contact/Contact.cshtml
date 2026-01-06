@@ -1,0 +1,19 @@
+﻿@model Exo3.Models.ContactViewModel
+
+<h2>Détails du contact</h2>
+
+<div class="card contact-details">
+    <div class="detail-row">
+        <strong>Nom:</strong> @Model.Name
+    </div>
+    <div class="detail-row">
+        <strong>Email:</strong> @Model.Email
+    </div>
+    <div class="detail-row">
+        <strong>ID:</strong> @Model.Id
+    </div>
+    
+    <div class="actions">
+        <a asp-controller="Contact" asp-action="Contacts" class="btn">Retour à la liste</a>
+    </div>
+</div>
